@@ -1,0 +1,57 @@
+﻿.vuelos {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 7em;
+}
+
+    .vuelos > div {
+        /*display: flex;
+        justify-content: space-around;*/
+        //display: grid;
+        //grid-template-columns: 0.5fr 1fr 2fr 0.5fr 1fr 2fr 1fr;
+        padding: 2em;
+        box-shadow: 1px 1px 0 lightgrey;
+        margin: auto;
+        background: white;
+        margin-bottom: 1em;
+        text-align: center;
+        border-right: 15px solid #480c4c;
+    }
+
+/*.titulo {
+    margin: 1em 0 2em 0;
+    padding-left: 0.5em;
+    border-left: 10px solid #fbba3b;
+}*/
+
+
+.vuelos > div > div > div {
+    color: dimgrey;
+}
+
+.avion {
+    font-size: 4em;
+    color: #480c4c !important;
+}
+
+.vuelta {
+    padding-top: 5px;
+    transform: rotate(90deg);
+}
+
+.hora {
+    font-size: 2em;
+    font-weight: 500;
+    color: #212121 !important;
+}
+
+.flechas {
+    font-size: 2em;
+    color: #480c4c;
+}
+
+.costo {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #212121 !important;
+}

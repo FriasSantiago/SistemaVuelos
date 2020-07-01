@@ -1,0 +1,19 @@
+﻿.login {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .login > div {
+        padding: 1em 2em;
+        box-shadow: 1px 1px 0 lightgrey;
+        margin: auto;
+        background: white;
+        margin-bottom: 7em;
+        border-right: 15px solid #480c4c;
+    }
+
+.botones {
+    padding-top: 2em;
+}

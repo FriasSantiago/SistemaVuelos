@@ -1,0 +1,68 @@
+﻿.registrar {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 7em;
+    display: flex;
+}
+
+    .registrar form {
+        width: 80%;
+        margin: auto;
+        justify-content: space-evenly;
+        box-shadow: 1px 1px 0 lightgrey;
+        background: white;
+        border-right: 15px solid #480c4c;
+    }
+
+    .registrar form > div {
+        padding: 1em 3em;
+    }
+/*
+    .registrar > div > form {
+        display: grid;
+        grid-template-columns: 3fr 0.5fr 3fr;
+        padding: 1em;
+        box-shadow: 1px 1px 0 lightgrey;
+        background: white;
+        border-right: 15px solid #480c4c;
+    }
+    */
+
+.lista-errores{
+    margin-top: 2em;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.obligatorios {
+    justify-self: end;
+    align-self: end;
+    font-size: 0.9em;
+}
+
+    .obligatorios p {
+        margin: 0 !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+

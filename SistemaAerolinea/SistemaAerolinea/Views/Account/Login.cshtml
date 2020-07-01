@@ -1,0 +1,36 @@
+﻿@model SistemaAerolinea.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Iniciar sesión";
+}
+@section css {
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+
+<h1 class="titulo">Inicio de sesión</h1>
+
+<div class="login row">
+    <div class="col-10 col-sm-10 col-md-5 col-lg-4 col-xl-3">
+        <form asp-controller="Account" asp-action="Login">
+            <div class="grupo">
+                <input class="form-control" asp-for="Usuario" required />
+                <label asp-for="Usuario" class="label-name">
+                    <span class="content-name">Usuario</span>
+                </label>
+                <span asp-validation-for="Usuario" class="text-danger mensaje-error"></span>
+            </div>
+            <div class="grupo">
+                <input class="form-control" asp-for="Pwd" required />
+                <label asp-for="Pwd" class="label-name">
+                    <span class="content-name">Contraseña</span>
+                </label>
+                <span asp-validation-for="Pwd" class="text-danger mensaje-error"></span>
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="botones">
+                <input type="submit" value="Entrar" class="boton botonform" />
+                <a class="volver" asp-action="Index" asp-controller="Home">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>

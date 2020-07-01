@@ -1,0 +1,19 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/error.css" />
+}
+
+
+
+<div class="background">
+    <div class="texto">
+        <h2>404</h2>
+        <p>Ups... parece que el avión que estás buscando se encuentra en otra pista.</p>
+        <a class="volver" asp-action="Index">Volver</a>
+    </div>
+</div>
+

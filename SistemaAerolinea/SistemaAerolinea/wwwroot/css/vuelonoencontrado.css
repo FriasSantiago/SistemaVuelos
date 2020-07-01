@@ -1,0 +1,77 @@
+﻿.vuelonoencontrado {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 7em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+    .vuelonoencontrado img {
+        margin: 1em 0;
+    }
+
+    .cartel {
+        text-align: center;
+        color: #212121;
+        margin-bottom: 3em;
+    }
+
+.buscador {
+    padding: 1em;
+    padding-left: 0;
+    border-radius: 0;
+    width: 90%;
+    margin: 0 5%;
+    box-shadow: 1px 1px 0 lightgrey;
+    background: white;
+}
+
+.buscador form {
+    padding: 0 1em;
+}
+
+.form-control {
+    border-radius: 2px;
+}
+
+    .form-control:focus {
+        box-shadow: 0 0 0 0.2rem rgb(247, 200, 108);
+    }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.botonbuscar {
+    border: none;
+    margin-top: 0.5em;
+    margin-left: 1em;
+    background-color: #480c4c;
+    width: 100%;
+}
+
+    .botonbuscar:hover {
+        color: #480c4c;
+        font-weight: 600;
+    }
+
+.icon {
+    width: 2em;
+    font-size: 2em;
+    color: #480c4c;
+}

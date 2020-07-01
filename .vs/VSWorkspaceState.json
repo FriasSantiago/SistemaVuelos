@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SistemaAerolinea",
+    "\\SistemaAerolinea\\SistemaAerolinea",
+    "\\SistemaAerolinea\\SistemaAerolinea\\Models",
+    "\\SistemaAerolinea\\SistemaAerolinea\\Views",
+    "\\SistemaAerolinea\\SistemaAerolinea\\Views\\Home"
+  ],
+  "SelectedNode": "\\SistemaAerolinea\\SistemaAerolinea\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

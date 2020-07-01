@@ -1,0 +1,74 @@
+﻿@model SistemaAerolinea.ViewModels.RegistrarViewModel
+
+@{
+    ViewData["Title"] = "Registrar";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/registrar.css" />
+}
+
+<h1 class="titulo">Registro</h1>
+
+<div class="registrar row">
+    <form asp-action="Registrar" class="row">
+        <div class="col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+            <div class="grupo">
+                <input class="form-control" asp-for="Usuario" required />
+                <label asp-for="Usuario" class="label-name">
+                    <span class="content-name">Usuario</span>
+                </label>
+                <span asp-validation-for="Usuario" class="text-danger mensaje-error"></span>
+            </div>
+            <div class="grupo">
+                <input class="form-control" asp-for="Nombre" required />
+                <label asp-for="Nombre" class="label-name">
+                    <span class="content-name">Nombre</span>
+                </label>
+                <span asp-validation-for="Nombre" class="text-danger mensaje-error"></span>
+            </div>
+            <div class="grupo">
+                <input class="form-control" asp-for="Apellido" required />
+                <label asp-for="Apellido" class="label-name">
+                    <span class="content-name">Apellido</span>
+                </label>
+                <span asp-validation-for="Apellido" class="text-danger mensaje-error"></span>
+            </div>
+        </div>
+
+        <div class="col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+            <div class="grupo">
+                <input class="form-control" asp-for="Pwd" required />
+                <label asp-for="Pwd" class="label-name">
+                    <span class="content-name">Contraseña</span>
+                </label>
+                <span asp-validation-for="Pwd" class="text-danger mensaje-error"></span>
+            </div>
+            <div class="grupo">
+                <input class="form-control" asp-for="Email" required />
+                <label asp-for="Email" class="label-name">
+                    <span class="content-name">Email</span>
+                </label>
+                <span asp-validation-for="Email" class="text-danger mensaje-error"></span>
+            </div>
+            <div class="grupo">
+                <input class="form-control" asp-for="Telefono" required />
+                <label asp-for="Telefono" class="label-name">
+                    <span class="content-name">Teléfono</span>
+                </label>
+                <span asp-validation-for="Telefono" class="text-danger mensaje-error"></span>
+            </div>
+        </div>
+
+
+        <div class="botones col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+            <input type="submit" value="Crear cuenta" class="btn boton botonform" />
+            <a class="volver" asp-action="Index" asp-controller="Home">Volver</a>
+        </div>
+
+        <div class="lista-errores col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div asp-validation-summary="ModelOnly" class="text-danger col-12"></div>
+        </div>
+
+    </form>
+</div>

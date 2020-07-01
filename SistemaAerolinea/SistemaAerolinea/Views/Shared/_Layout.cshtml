@@ -1,0 +1,124 @@
+﻿@inject SignInManager<Usuario> signInManager
+
+@{
+
+    var src = Url.Content("~/img");
+    var logo = src + "/logo.png";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/shared.css" />
+    @RenderSection("css", false)
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-light box-shadow">
+
+            <a class="navbar-brand logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="@logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class=""><i class="fa fa-bars menu-icon" aria-hidden="true"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="ml-auto text-right">
+                    <ul class="navbar-nav d-inline-flex">
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item ml-auto mt-3">
+                                <a asp-controller="Reserva" asp-action="Reserva" class="btn boton fa-input">Mis reservas</a>
+                            </li>
+                            <li class="nav-item ml-auto mb-3 mt-3">
+                                <form asp-controller="Account" asp-action="Logout" method="POST">
+                                    <button type="submit" class="btn boton ml-xl-4">Cerrar sesión<i class="fa fa-sign-out ml-2"></i></button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item ml-auto mt-3">
+                                <a class="btn boton fa-input" asp-area="" asp-controller="Account" asp-action="Registrar">Registrarse</a>
+                            </li>
+                            <li class="nav-item ml-auto mb-3 mt-3">
+                                <a class="btn boton fa-input ml-xl-4 " asp-area="" asp-controller="Account" asp-action="Login">Iniciar sesión<i class="fa fa-sign-in ml-2"></i></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+        <!--
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow">
+        <div class="container">
+            <a class="navbar-brand logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="@logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav ml-auto">
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item">
+                        <a asp-controller="Reserva" asp-action="Reserva" class="btn boton fa-input">Mis reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <form asp-controller="Account" asp-action="Logout" method="POST">
+                            <button type="submit" class="btn boton ml-4">Cerrar sesión<i class="fa fa-sign-out ml-2"></i></button>
+                        </form>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="btn boton fa-input" asp-area="" asp-controller="Account" asp-action="Registrar">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn boton fa-input ml-4 " asp-area="" asp-controller="Account" asp-action="Login">Iniciar sesión<i class="fa fa-sign-in ml-2"></i></a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+        -->
+
+
+
+
+
+
+    </header>
+    <div class="container">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+        <footer class="footer">
+            <div class="contacto">Teléfono: 4958-9000 | Yatay 240 - CABA</div>
+            <div>
+                &copy; 2020 - VolAr - <a asp-area="" asp-controller="Home" asp-action="Nosotros">Nosotros</a>
+            </div>
+            <div class="sociales">
+                <a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-facebook-square"></i>  /VolAr</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-twitter-square"></i>  @@VolAr</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-instagram"></i>  /VolAr</a>
+</div>
+        </footer>
+    </div>   
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

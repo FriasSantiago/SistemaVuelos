@@ -1,0 +1,21 @@
+﻿.background {
+    background: url(../img/error.png);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.texto {
+    text-align: center;
+    padding: 6em 0;
+}
+
+.texto > h2{
+    font-size: 5em;
+}
+
+    .texto > p {
+        font-size: 1.5em;
+        color: dimgrey;
+        margin-bottom: 3em;
+    }
