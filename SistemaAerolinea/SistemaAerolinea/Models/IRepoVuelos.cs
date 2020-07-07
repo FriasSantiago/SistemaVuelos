@@ -7,7 +7,6 @@ namespace SistemaAerolinea.Models
 {
     public interface IRepoVuelos
     {
-        List<Vuelo> GetAllVuelos();
         Vuelo FindVueloById(int id);
         List<Vuelo> BuscarVuelo(string origen, string destino, DateTime fechaSalida);
     }

@@ -7,8 +7,9 @@ namespace SistemaAerolinea.Models
 {
     public interface IRepoReservas
     {
-        void RegistrarReserva(Reserva reserva);
+        bool RegistrarReserva(Reserva reserva);
         List<Reserva> GetReservasUsuario(String id);
         bool BorrarReserva(int idReserva);
+        void UpdateAsientos(int idVuelo, bool esBorrar);
     }
 }

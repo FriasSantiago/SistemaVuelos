@@ -31,7 +31,8 @@ namespace SistemaAerolinea.Context
                     HoraFechaLlegada = DateTime.Now,
                     Duracion = 100,
                     CostoPasaje = 20000,
-                    AsientosDisponibles = 200
+                    AsientosDisponibles = 2,
+                    CapacidadMaxima = 2
 
                 },
 
@@ -44,7 +45,8 @@ namespace SistemaAerolinea.Context
                     HoraFechaLlegada = DateTime.Now,
                     Duracion = 100,
                     CostoPasaje = 50000,
-                    AsientosDisponibles = 200
+                    AsientosDisponibles = 200,
+                    CapacidadMaxima = 200
                 },
 
                 new Vuelo()
@@ -56,7 +58,8 @@ namespace SistemaAerolinea.Context
                     HoraFechaLlegada = DateTime.Now,
                     Duracion = 100,
                     CostoPasaje = 22000,
-                    AsientosDisponibles = 200
+                    AsientosDisponibles = 200,
+                    CapacidadMaxima = 200
 
                 },
 
@@ -69,7 +72,8 @@ namespace SistemaAerolinea.Context
                     HoraFechaLlegada = DateTime.Now,
                     Duracion = 100,
                     CostoPasaje = 18000,
-                    AsientosDisponibles = 200
+                    AsientosDisponibles = 200,
+                    CapacidadMaxima = 200
 
                 }
 

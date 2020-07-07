@@ -39,9 +39,15 @@ namespace SistemaAerolinea.Controllers
                 EstadoReserva = "Reservado"
             };
 
-            repoReservas.RegistrarReserva(model);
+            if (repoReservas.RegistrarReserva(model))
+            {
+                return RedirectToAction("Reserva", model);
+            } else
+            {
+                return View("Error");
+            }
 
-            return RedirectToAction("Reserva", model);
+            
         }
 
         [Authorize]

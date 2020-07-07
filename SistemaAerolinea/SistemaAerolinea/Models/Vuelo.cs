@@ -21,6 +21,8 @@ namespace SistemaAerolinea.Models
         [Required]
         public int Duracion { get; set; }
         [Required]
+        public int CapacidadMaxima { get; set; }
+        [Required]
         public int AsientosDisponibles { get; set; }
         [Required]
         public float CostoPasaje { get; set; }

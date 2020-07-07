@@ -11,10 +11,12 @@ namespace SistemaAerolinea.Models
     {
 
         private readonly AerolineaDbContext _context;
+        private readonly IRepoVuelos repoVuelos;
 
-        public RepoReservas(AerolineaDbContext context)
+        public RepoReservas(AerolineaDbContext context, IRepoVuelos repoVuelos)
         {
             _context = context;
+            this.repoVuelos = repoVuelos;
         }
 
         public bool BorrarReserva(int idReserva)
@@ -26,6 +28,7 @@ namespace SistemaAerolinea.Models
             if (res != null)
             {
                 _context.Reservas.Remove(res);
+                UpdateAsientos(res.VueloId, true);
                 _context.SaveChanges();
                 borrado = true;
             }
@@ -40,10 +43,36 @@ namespace SistemaAerolinea.Models
              .ToList();
         }
 
-        public void RegistrarReserva(Reserva reserva)
+        public bool RegistrarReserva(Reserva reserva)
         {
-            _context.Add(reserva);
-            _context.SaveChanges();
+
+            var vuelo = repoVuelos.FindVueloById(reserva.VueloId);
+
+            if (vuelo.AsientosDisponibles > 0)
+            {
+                _context.Add(reserva);
+                UpdateAsientos(reserva.VueloId, false);
+                _context.SaveChanges();
+                return true;
+            }
+            
+            return false;
         }
+
+        public void UpdateAsientos(int idVuelo, bool esBorrar)
+        {
+            var vuelo = _context.Vuelos.FirstOrDefault(vuelo => vuelo.VueloId == idVuelo);
+
+            if (esBorrar)
+            {
+                vuelo.AsientosDisponibles++;
+            } else
+            {
+                vuelo.AsientosDisponibles--;
+            }
+
+            _context.Vuelos.Update(vuelo);
+        }
+
     }
 }

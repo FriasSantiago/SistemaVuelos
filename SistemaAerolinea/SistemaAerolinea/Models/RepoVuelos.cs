@@ -20,7 +20,7 @@ namespace SistemaAerolinea.Models
         public List<Vuelo> BuscarVuelo(string origen, string destino, DateTime fechaSalida)
         {
             return _context.Vuelos
-                .Where(vuelo => vuelo.Origen == origen && vuelo.Destino == destino && vuelo.HoraFechaSalida.Date == fechaSalida.Date)
+                .Where(vuelo => vuelo.AsientosDisponibles > 0 && vuelo.Origen == origen && vuelo.Destino == destino && vuelo.HoraFechaSalida.Date == fechaSalida.Date)
                 .ToList();
         }
 
@@ -28,13 +28,6 @@ namespace SistemaAerolinea.Models
         {
             return _context.Vuelos.Where(vuelo => vuelo.VueloId == id).FirstOrDefault();
         }
-
-        public List<Vuelo> GetAllVuelos()
-        {
-            return _context.Vuelos.ToList();
-        }
-
-
 
     }
 }
