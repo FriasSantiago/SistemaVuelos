@@ -11,52 +11,63 @@
 
 <div class="reserva row">
 
-    @foreach (var item in Model)
+    @if (Model.Count > 0)
     {
-    <div class="col-11 col-sm-11 col-md-10 col-lg-10 col-xl-10 row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <div>
-                <span>N° de reserva:</span>
-                <br />
-                @item.ReservaId
+
+        @foreach (var item in Model)
+        {
+        <div class="col-11 col-sm-11 col-md-10 col-lg-10 col-xl-10 row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div>
+                    <span>N° de reserva:</span>
+                    <br />
+                    @item.ReservaId
+                </div>
+                <div>
+                    <span>Salida:</span>
+                    <br />
+                    @item.Vuelo.HoraFechaSalida.ToString("d")
+                    <br />
+                    @item.Vuelo.HoraFechaSalida.ToString("t")
+                    <br />
+                    @item.Vuelo.Origen
+                </div>
+                <div>
+                    <span>Llegada:</span>
+                    <br />
+                    @item.Vuelo.HoraFechaLlegada.ToString("d")
+                    <br />
+                    @item.Vuelo.HoraFechaLlegada.ToString("t")
+                    <br />
+                    @item.Vuelo.Destino
+                </div>
             </div>
-            <div>
-                <span>Salida:</span>
-                <br />
-                @item.Vuelo.HoraFechaSalida
-                <br />
-                @item.Vuelo.Origen
-            </div>
-            <div>
-                <span>Llegada:</span>
-                <br />
-                @item.Vuelo.HoraFechaLlegada
-                <br />
-                @item.Vuelo.Destino
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div>
+                    <span>Pasajero:</span>
+                    <br />
+                    @item.Usuario.Nombre
+                    <br />
+                    @item.Usuario.Apellido
+                </div>
+                <div>
+                    <span>Costo del pasaje:</span>
+                    <br />
+                    $@item.Vuelo.CostoPasaje
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <form asp-action="Borrar" asp-controller="Reserva" method="POST" class="cancelarForm">
+                        <input type="hidden" name="reservaId" value="@item.ReservaId" />
+                        <!--<input type="submit" value="Cancelar reserva" />-->
+                        <button type="submit" class="btn botoncancelar"><i class="fa fa-window-close"></i></button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <div>
-                <span>Pasajero:</span>
-                <br />
-                @item.Usuario.Nombre
-                <br />
-                @item.Usuario.Apellido
-            </div>
-            <div>
-                <span>Costo del pasaje:</span>
-                <br />
-                $@item.Vuelo.CostoPasaje
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <form asp-action="Borrar" asp-controller="Reserva" method="POST" class="cancelarForm">
-                    <input type="hidden" name="reservaId" value="@item.ReservaId" />
-                    <!--<input type="submit" value="Cancelar reserva" />-->
-                    <button type="submit" class="btn botoncancelar"><i class="fa fa-window-close"></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
+        }
+    } else
+    {
+        <h2>Aun no tiene reservas...</h2>
     }
 </div>
 

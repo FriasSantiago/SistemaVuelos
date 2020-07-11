@@ -4,15 +4,16 @@
 
         let titular = $("[name=titular]").val();
         let nroTarjeta = $("[name=nroTarjeta]").val();
-
-        console.log(validarTarjeta(nroTarjeta)) 
-        if (validarTarjeta(nroTarjeta)) {
+        console.log(validarNombre(titular));
+        if (validarNombre(titular) && validarTarjeta(nroTarjeta)) {
 
         } else {
             e.preventDefault();
         }
 
     });
+
+    const validarNombre = titular => /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/.test(titular);
 
     $(".inputTarjeta").on("keyup", () => {
         let cardIn = $(".inputTarjeta");

@@ -51,8 +51,6 @@
                     <div class="costo col-6 col-sm-6 col-md-12 col-lg-12 col-xl-12"> $@item.CostoPasaje</div>
                     <form class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-12" asp-controller="Vuelo" asp-action="Comprar" method="GET">
                         <input type="hidden" value="@item.VueloId" name="idVuelo" />
-                        <p>@item.CapacidadMaxima</p>
-                        <p>@item.AsientosDisponibles</p>
                         <br />
                         <button type="submit" class="boton btn btn-success">Comprar</button>
                     </form>
